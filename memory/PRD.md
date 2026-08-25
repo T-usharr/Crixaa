@@ -37,6 +37,7 @@ Build a credible, pre-launch B2B fintech landing page for Crixaa — an underwri
 - Instant branded auto-reply to every enquirer ("We've received your enquiry — Crixaa", what-happens-next copy, Reply-To contact@crixaa.com; verified 202 Accepted via delivered@resend.dev).
 - Brand logomark: "Strata Funnel" (user-chosen from 6 concepts) — three data layers narrowing into an emerald check; used in nav + footer, light/dark variants; one-time on-load animation in the nav (layers settle top-down, check draws in via pathLength).
 - Brand assets: favicon.svg + favicon-32.png + apple-touch-icon.png + 1200×630 og-image.png (generator script: /app/scripts/gen_brand.py); OG/Twitter meta in index.html.
+- Real lender logos (SBFC svg, Aye jpg, Five-Star png, NeoGrowth png) sourced from official websites (Wayback mirror where origin WAF-blocked direct fetch), shown grayscale → color on hover in the counterfactual cards, with a trademark/no-relationship disclaimer line.
 - Final audit: no console errors (only a platform-script warning), no purple gradients/emoji/Inter/centered-layout slop; all sections visually re-verified desktop + mobile.
 - Fully responsive (verified 390px + 1920px).
 
