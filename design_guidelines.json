@@ -1,0 +1,402 @@
+{
+  "project_identity": {
+    "name": "Crixaa",
+    "tagline": "The underwriting decisioning layer for new-to-credit MSME loans in India",
+    "archetype": "The Performance Pro & Swiss Engineering Infrastructure (Stripe / Modern Treasury / Ramp register)",
+    "target_audience": "NBFC and Small Finance Bank Head of Credit, Head of Underwriting, Model Risk & Compliance Officers",
+    "theme_mode": "Light mode (calm, institutional neutral background with sharp high-contrast slate ink and single vivid emerald-teal CTA accent)",
+    "loan_ticket_size": "₹2 lakh – ₹10 lakh MSME loans",
+    "regulatory_stance": "Compliant with RBI 2022 Digital Lending Guidelines (Non-delegation of underwriting) and June 2026 Draft Model Risk Management Framework"
+  },
+  "theme_and_color_palette": {
+    "mode": "light",
+    "backgrounds": {
+      "primary": "#FAFBFD",
+      "surface_elevated": "#FFFFFF",
+      "surface_muted": "#F1F5F9",
+      "surface_subtle": "#F8FAFC",
+      "surface_dark_band": "#09131F"
+    },
+    "text_colors": {
+      "primary": "#0F172A",
+      "secondary": "#475569",
+      "muted": "#64748B",
+      "caption_attribution": "#64748B",
+      "inverse": "#F8FAFC"
+    },
+    "brand_accents": {
+      "cta_primary": "#047857",
+      "cta_primary_hover": "#065F46",
+      "cta_primary_active": "#064E3B",
+      "accent_emerald_light": "#ECFDF5",
+      "accent_emerald_border": "#A7F3D0",
+      "accent_cyan_glow": "#0EA5E9",
+      "warning_amber": "#D97706",
+      "danger_rose": "#E11D48"
+    },
+    "borders": {
+      "subtle": "#E2E8F0",
+      "medium": "#CBD5E1",
+      "focus": "#047857",
+      "dark_band_border": "#1E293B"
+    },
+    "rules": [
+      "NO #7351B7 or #1B93A4 forbidden AI colors.",
+      "Strictly single primary CTA accent color (#047857 / Deep Emerald) reserved exclusively for conversion buttons and key interactive nodes.",
+      "Every stat number uses tabular numerals (font-mono or font-sans tabular-nums) for precision.",
+      "Inline attribution captions must be muted slate (#64748B) with underline on hover to linked sources.",
+      "Header background MUST use backdrop-blur glassmorphism (bg-white/80 backdrop-blur-md) with border-b border-slate-200/80 - never fully transparent."
+    ]
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Outfit, Cabinet Grotesk, sans-serif",
+      "weights": {
+        "hero": "font-bold (700)",
+        "h2": "font-semibold (600)",
+        "h3": "font-medium (500)"
+      },
+      "letter_spacing": "tracking-tight (-0.025em)",
+      "max_hero_size": "text-4xl sm:text-5xl lg:text-6xl"
+    },
+    "body": {
+      "font_family": "Plus Jakarta Sans, DM Sans, sans-serif",
+      "size": "text-base sm:text-lg",
+      "line_height": "leading-relaxed"
+    },
+    "code_and_numbers": {
+      "font_family": "JetBrains Mono, Fira Code, monospace",
+      "class": "font-mono tabular-nums",
+      "usage": "All stat callouts, financial figures (₹, lakhs, crores, percentages), specimen tags, and reason codes."
+    },
+    "rules": [
+      "BANNED for Headings: Inter, generic AI system sans, or space grotesk.",
+      "Heading hierarchy step rule: maximum jump of 2 tailwind scale steps between heading and subheading.",
+      "Overlines/labels: UPPERCASE text-xs tracking-[0.2em] font-mono text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-full inline-block border border-emerald-200/60."
+    ]
+  },
+  "spacing_and_layout": {
+    "grid_system": "The Swiss Engineering Grid & Bento Protocol",
+    "container_width": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "section_padding": "py-20 lg:py-28",
+    "gap_strategy": "gap-8 lg:gap-12",
+    "rules": [
+      "Generous spacing strategy: containers with borders must have internal padding (p-6 or p-8) to prevent text collision.",
+      "Never center everything. Left-aligned editorial hierarchy for titles, paragraphs, and list items.",
+      "Grid children must be direct children. Animation wrappers (framer-motion) must carry layout classes.",
+      "Responsive layout: Mobile-first (grid-cols-1 md:grid-cols-2 lg:grid-cols-3 or custom bento spans)."
+    ]
+  },
+  "motion_and_craft": {
+    "smooth_scrolling": "Lenis smooth scroll integration on window.",
+    "framer_motion_patterns": {
+      "hero_reveal": "Masked line-by-line opacity and Y-translation reveal with staggered entrance (delay Children 0.1s).",
+      "scroll_section_entrance": "fade-in-up (initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 }, viewport: { once: true, margin: '-80px' }).",
+      "hover_micro_interactions": "border highlight transition, subtle scale (1.01), subtle translation (-2px Y), shadow-md glow on CTA."
+    },
+    "marquee": "Slow editorial drift marquee using react-fast-marquee or custom framer loop with pale slate background and dark slate text for RBI compliance principles / data rails.",
+    "interactive_specimen": "Interactive Crixaa decision specimen card in hero with toggleable tabs (Overview, Cash Flow Data, GST Signals, Audit Trail & Override) so buyers can inspect live explainability features."
+  },
+  "narrative_sections_spec": [
+    {
+      "section_id": "hero",
+      "title": "Hero Section & Decision Specimen",
+      "headline": "The underwriting layer for MSME borrowers your bureau can't see yet.",
+      "subhead": "Crixaa turns GST, cash-flow, and Account Aggregator data into an explainable underwriting recommendation for ₹2L–10L new-to-credit MSME loans — built for NBFC and Small Finance Bank credit teams, and for the model governance rules already arriving.",
+      "cta_text": "Start a conversation",
+      "specimen_card": {
+        "title": "Crixaa Underwriting Recommendation Specimen",
+        "applicant": "Applicant #8942-ND (Redacted MSME Entity)",
+        "requested_amount": "₹5,00,00,00 (₹5 Lakhs)",
+        "bureau_history": "None on file (New to Credit)",
+        "cohort_confidence": "92nd Percentile (Tier-2 Retail MSME Cohort)",
+        "recommendation": "Approve, with conditions",
+        "reason_codes": [
+          "RC-104: 14-month unbroken GST-3B filing record",
+          "RC-208: AA cash-flow stability coefficient > 0.78",
+          "RC-302: Primary director personal bureau score 768"
+        ],
+        "compliance_disclaimer": "This recommendation does not decide the loan. Your underwriter does."
+      }
+    },
+    {
+      "section_id": "paradox",
+      "title": "The Personal-vs-Business Paradox",
+      "stat": "1.8×",
+      "stat_label": "Credit growth multiplier to individual entrepreneurs vs their business entities (Mar 2023 – Mar 2026)",
+      "attribution": "TransUnion CIBIL MSME Credit Pulse",
+      "narrative": "A founder can carry a personal credit score above 750, pay every EMI on time for years, and still watch their own business get declined the moment a lender is asked to score the entity instead of the person. Lenders already trust the person. They still can't see the business behind them — even when it's the exact same person they'd already approve."
+    },
+    {
+      "section_id": "macro_population",
+      "title": "Zoom Out to the Whole Population",
+      "quote": "Gig workers, first-time entrepreneurs, and informal-sector business owners are largely creditworthy. Lenders simply can't see it — because their financial behaviour was never captured by a traditional credit bureau.",
+      "quote_author": "SIDBI (Small Industries Development Bank of India)",
+      "stats": [
+        {
+          "number": "₹25–30L Cr",
+          "label": "Estimated MSME Credit Gap in India",
+          "attribution": "SIDBI Sector Assessment, May 2025"
+        },
+        {
+          "number": "41%",
+          "label": "Registered MSMEs with access to formal credit",
+          "attribution": "SIDBI / MSME Pulse Report"
+        },
+        {
+          "number": "72% vs 46%",
+          "label": "New-to-credit borrowers in medium-risk bands vs existing-to-credit",
+          "attribution": "TransUnion CIBIL Data Insights"
+        }
+      ],
+      "translation_line": "That's not a lending-risk problem. It's a visibility problem."
+    },
+    {
+      "section_id": "who_it_is_built_for",
+      "title": "Who This Is Built For",
+      "personas": [
+        {
+          "role": "Agile NBFC-BL Lenders",
+          "description": "Lenders already piloting alternative-data underwriting at small ticket sizes looking to scale safely without manual bottleneck."
+        },
+        {
+          "role": "Small Finance Banks (SFBs)",
+          "description": "Institutions with a financial-inclusion mandate, higher compliance maturity, and zero tolerance for unexplainable AI models."
+        },
+        {
+          "role": "Larger NBFC-ML / UL Lenders",
+          "description": "Middle & Upper Layer NBFCs needing a validated, audit-ready new-to-credit decisioning engine without building complex infrastructure in-house."
+        }
+      ]
+    },
+    {
+      "section_id": "institutional_proof",
+      "title": "Proof This Approach Already Works at Institutional Scale",
+      "beats": [
+        {
+          "stat": "5×",
+          "title": "FIT Rank Validation",
+          "description": "FIT Rank, launched by CIBIL under SIDBI's direct mentorship using GST, bank statements, and ITR data with ML, achieves >5× risk differentiation within what bureau scoring treats as one uniform medium-risk segment.",
+          "attribution": "TransUnion CIBIL / SIDBI"
+        },
+        {
+          "stat": "<15 min",
+          "title": "SIDBI GST Sahay Program",
+          "description": "Built on Account Aggregator + GST rails, sanctioned ₹600 crore to 1,750+ customers and disbursed ₹315 crore across 15,000+ invoices at median application-to-disbursal under 15 minutes.",
+          "attribution": "SIDBI GST Sahay Program Disclosure"
+        }
+      ],
+      "timeline_visual": {
+        "traditional": "Traditional Underwriting Timeline: 14–21 Days (Manual GST verification, physical field visits, paper bank statement analysis)",
+        "aa_enabled": "Crixaa AA + GST Rails Timeline: Under 15 Minutes (Instant consented data pull, cohort risk mapping, audit-ready reason code output)"
+      }
+    },
+    {
+      "section_id": "cost_of_status_quo",
+      "title": "What It Costs Lenders Today Without This",
+      "lender_cards": [
+        {
+          "name": "SBFC Finance",
+          "metric": "<40% approval rate",
+          "context": "Listed NBFC (₹5L–30L loans) approves under 40% of applications, choosing to forego growth rather than absorb unquantified credit risk — 89% of its book is concentrated in borrowers with CIBIL > 700.",
+          "attribution": "SBFC Finance Investor Disclosure"
+        },
+        {
+          "name": "Aye Finance",
+          "metric": "4.21% → ~4.85% NPA",
+          "context": "Gross NPA climbed from 4.21% to ~4.85% between FY25 and H1 FY26, with profits dropping ~40% YoY driven by rising impairment costs in new-to-credit segments.",
+          "attribution": "Aye Finance FY26 Financial Results"
+        },
+        {
+          "name": "Five-Star Business Finance",
+          "metric": "99% collateral requirement",
+          "context": "Operates inside Crixaa's ₹1L–10L target band but solves borrower uncertainty by requiring hard collateral on 99% of its loan book, shutting out asset-light micro-businesses.",
+          "attribution": "Five-Star Business Finance, CARE Ratings, June 2025"
+        },
+        {
+          "name": "NeoGrowth Credit",
+          "metric": "96% unsecured exposure",
+          "context": "Carries 96% unsecured exposure to MSME borrowers rated as having a 'moderate credit profile', leaving earnings vulnerable to unexpected macro shocks.",
+          "attribution": "NeoGrowth Credit, ICRA Rating Rationale"
+        }
+      ],
+      "framing_line": "Real lenders in this exact segment are already choosing between two bad options: decline the volume, or absorb the risk. Neither is a permanent answer."
+    },
+    {
+      "section_id": "how_it_works",
+      "title": "How It Actually Works",
+      "steps": [
+        {
+          "step": "1",
+          "name": "Connect",
+          "description": "Plugs into Account Aggregator, GSTN, and bureau data the lender already pulls — zero new manual document uploads for the borrower."
+        },
+        {
+          "step": "2",
+          "name": "Score",
+          "description": "Generates a cohort-calibrated recommendation with a explicit confidence interval, never a black-box numerical score."
+        },
+        {
+          "step": "3",
+          "name": "Explain",
+          "description": "Attaches human-readable reason codes tailored for your Model Risk Committee and RBI compliance auditors."
+        },
+        {
+          "step": "4",
+          "name": "Decide",
+          "description": "Your underwriter reviews, makes the final determination, or overrides — with decision and rationale automatically logged."
+        },
+        {
+          "step": "5",
+          "name": "Learn",
+          "description": "Real repayment outcomes automatically recalibrate the next decision recommendation for that specific sub-cohort."
+        }
+      ]
+    },
+    {
+      "section_id": "two_role_console",
+      "title": "What Two People Inside the Same Lender Each Get",
+      "roles": [
+        {
+          "title": "For the Head of Underwriting",
+          "icon": "ShieldCheck",
+          "benefits": [
+            "A decision recommendation they can act on immediately, backed by plain-language reason codes",
+            "Zero workflow friction — operates seamlessly with data pipelines already pulled",
+            "Full control — the underwriter always makes the final call and can override at any time"
+          ]
+        },
+        {
+          "title": "For Model Risk & Compliance",
+          "icon": "FileText",
+          "benefits": [
+            "Complete audit trail built to satisfy RBI's non-delegation guidelines before auditors ask",
+            "Designed ground-up around the incoming RBI Model Risk Management Framework (June 2026)",
+            "Every underwriter override and loan outcome is immutably logged against its risk cohort"
+          ]
+        }
+      ]
+    },
+    {
+      "section_id": "built_inside_rules",
+      "title": "Built Inside the Rules, Not Around Them",
+      "regulatory_pillars": [
+        {
+          "title": "RBI Digital Lending Guidelines (2022)",
+          "detail": "Prohibits regulated lenders from outsourcing core underwriting judgment. Crixaa recommends; your underwriter always decides."
+        },
+        {
+          "title": "Draft Model Risk Management Framework (June 2026)",
+          "detail": "Requires formal Board-approved governance and explainability for AI/ML models across NBFCs. Crixaa is architected for this exact standard."
+        },
+        {
+          "title": "Account Aggregator & GSTN Infrastructure",
+          "detail": "Native integration with RBI-regulated AA consent flows and official GSTN tax compliance data — no parallel pipelines or scraped data."
+        }
+      ]
+    },
+    {
+      "section_id": "how_we_work",
+      "title": "How We Work: A Structured Pilot",
+      "subhead": "A structured pilot, not a leap of faith.",
+      "pilot_flow": "Connect one real portfolio's new-to-credit segment → Crixaa scores every application in shadow for 90 days alongside your existing process (no live decisions changed) → compare recommendations against actual repayment outcomes → your credit committee decides whether to go live using your own portfolio data."
+    },
+    {
+      "section_id": "why_crixaa",
+      "title": "Why Crixaa",
+      "differentiators": [
+        "Built for borrowers with no bureau file, not repurposed from existing credit scoring",
+        "Every recommendation ships with plain-language reason codes your Model Risk Committee can audit",
+        "Recommends, never auto-approves — your underwriter maintains 100% final authority",
+        "Works with data you already collect (Account Aggregator, GST, bureau pull where present)",
+        "Calibrated against real new-to-credit cohort outcomes, not synthetic assumptions",
+        "Built natively for RBI's 2026 Model Risk Management governance standards"
+      ]
+    },
+    {
+      "section_id": "final_cta_and_contact",
+      "title": "Final Action & Partner Pilot Form",
+      "headline": "If your credit team is already stitching together a GST parser, a bureau pull, and a field visit to make one call — talk to us before your next new-to-credit application sits in the queue.",
+      "cta_button": "Start a conversation",
+      "transparency_note": "We're onboarding a small number of founding pilot partners. Early conversations are covered under NDA on request — and we'll tell you plainly if we're not ready for you yet.",
+      "contact_email_placeholder": "founders@crixaa.com",
+      "form_fields": [
+        "Full Name",
+        "Work Email",
+        "Organization / Lender Name",
+        "Message / Portfolio Details"
+      ]
+    }
+  ],
+  "components_and_ui_library": {
+    "shadcn_usage": "Customized Shadcn primitives for interactive elements: Dialog/Modal (contact form modal), Tabs (specimen interactive tabs), Card, Button, Input, Textarea, Badge.",
+    "custom_components": [
+      "HeaderNav (sticky glassmorphic top bar with logo, 4 smooth-scroll links, single accent CTA)",
+      "HeroSpecimen (interactive decision card showing applicant, confidence, reason codes, compliance disclaimer)",
+      "StatCard (large tabular numeral, description, muted inline attribution)",
+      "ComparativeTimeline (2-bar chart visual contrasting traditional 21-day underwriting vs 15-min Crixaa AA flow)",
+      "LenderCounterfactualGrid (4-card grid highlighting SBFC, Aye, Five-Star, NeoGrowth real metrics)",
+      "StepFlowDiagram (5-step connected horizontal/vertical process flow)",
+      "TwoRoleConsole (head of credit vs compliance audit view)",
+      "ContactFormDialog & InlineContactForm (Form validation, loading state, submission storage in state/localStorage, clear success toast via Sonner)",
+      "Marquee (slow editorial marquee with RBI compliance principles)",
+      "Footer (clean bottom bar with repeat primary CTA, disclaimer, and founder email link)"
+    ]
+  },
+  "accessibility_and_compliance": {
+    "contrast_ratio": "APCA & WCAG AA compliant. Primary text slate-900 on white/slate-50 background achieves >12:1 contrast.",
+    "cta_contrast": "#047857 text on white background or white text on #047857 button achieves >4.5:1 contrast.",
+    "reduced_motion": "Respects prefers-reduced-motion in Framer Motion variants.",
+    "focus_states": "Visible emerald ring indicator focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 on interactive elements."
+  },
+  "testing_and_data_testid": {
+    "mandatory_rule": "ALL interactive and key informational elements MUST include a kebab-case role-based data-testid attribute.",
+    "testid_examples": [
+      "data-testid=\"nav-logo\"",
+      "data-testid=\"nav-link-how-it-works\"",
+      "data-testid=\"nav-cta-start-conversation\"",
+      "data-testid=\"hero-headline\"",
+      "data-testid=\"hero-specimen-card\"",
+      "data-testid=\"hero-specimen-tab-overview\"",
+      "data-testid=\"hero-specimen-tab-audit\"",
+      "data-testid=\"stat-paradox-multiplier\"",
+      "data-testid=\"quote-sidbi\"",
+      "data-testid=\"timeline-traditional-bar\"",
+      "data-testid=\"timeline-crixaa-bar\"",
+      "data-testid=\"lender-card-sbfc\"",
+      "data-testid=\"lender-card-aye\"",
+      "data-testid=\"lender-card-fivestar\"",
+      "data-testid=\"lender-card-neogrowth\"",
+      "data-testid=\"step-flow-item-1\"",
+      "data-testid=\"role-console-underwriter\"",
+      "data-testid=\"role-console-compliance\"",
+      "data-testid=\"pilot-offer-card\"",
+      "data-testid=\"differentiator-grid\"",
+      "data-testid=\"contact-form-name-input\"",
+      "data-testid=\"contact-form-email-input\"",
+      "data-testid=\"contact-form-org-input\"",
+      "data-testid=\"contact-form-message-input\"",
+      "data-testid=\"contact-form-submit-button\"",
+      "data-testid=\"footer-cta-start-conversation\"",
+      "data-testid=\"footer-founder-email\""
+    ]
+  },
+  "instructions_to_main_agent": [
+    "1. Do NOT build a pitch deck or consumer app look. Build an engineering-grade B2B fintech infrastructure site matching Stripe / Modern Treasury.",
+    "2. Strict single primary CTA wording: 'Start a conversation' (repeated top nav and bottom CTA section only).",
+    "3. No fabricated customer logos, fake 'trusted by 500+ banks' badges, or fake investor lists. Credibility comes entirely from real third-party data attributions (SIDBI, TransUnion CIBIL, SBFC, Aye, Five-Star, NeoGrowth, RBI).",
+    "4. Ensure all stat numbers use tabular numerals (tabular-nums font-mono or font-sans) and include muted inline attribution captions hyperlinked to actual source text.",
+    "5. Use Framer Motion for scroll reveals and Lenis for smooth scrolling.",
+    "6. Build the contact form modal and inline form so it saves submissions to localStorage/state and displays a clear Sonner toast notification.",
+    "7. Include all 12 narrative sections in exact sequence as specified.",
+    "8. Ensure every key component and button has a data-testid attribute."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Avoid generic AI slop: use distinctive light theme with slate/emerald palette, sharp borders, layered shadows, subtle grid patterns, and high typography hierarchy.",
+    "Never center-align paragraph text or main layout containers globally.",
+    "Use 2-3x generous padding inside bordered containers (p-6, p-8).",
+    "Exclusively use icons from lucide-react (or radix icons), no emoji characters for UI icons.",
+    "Always test form submissions with Sonner toasts for user feedback.",
+    "Add data-testid to every interactive component."
+  ]
+}
