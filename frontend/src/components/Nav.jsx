@@ -43,7 +43,7 @@ export default function Nav() {
           }}
           className="flex items-center gap-2"
         >
-          <Logo />
+          <Logo animated />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
