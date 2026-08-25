@@ -31,8 +31,9 @@ Build a credible, pre-launch B2B fintech landing page for Crixaa — an underwri
 - Kinetic hero: masked line-by-line headline reveal, tabbed specimen card (Overview / Reason codes / Audit trail), scroll parallax.
 - Divergence chart (1.8× vs 1.0×) and weeks-vs-15-minutes to-scale timeline bars, animated in view.
 - One slow editorial marquee (pauses on hover, respects reduced motion).
-- Numbered manifesto chapters 01–11, dark compliance + final CTA bands.
+- Unnumbered chapter labels (diamond marker), dark compliance + final CTA bands; nav: The Gap / What lenders say / How It Works / Pilot with us.
 - Working contact form → MongoDB, Sonner success/error toasts; GET /api/leads for reviewing submissions.
+- Email notification to contact@crixaa.com on every new enquiry (Emergent managed email proxy, httpx async, guardrail-gated template; verified 202 Accepted).
 - Fully responsive (verified 390px + 1920px).
 
 ## Backlog

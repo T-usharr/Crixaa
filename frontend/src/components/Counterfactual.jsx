@@ -43,6 +43,7 @@ const LENDERS = [
 export default function Counterfactual() {
   return (
     <section
+      id="lenders"
       data-testid="counterfactual-section"
       className="border-b border-slate-200 bg-slate-50 py-20 lg:py-28"
     >

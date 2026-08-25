@@ -14,14 +14,13 @@ export const Reveal = ({ children, delay = 0, className = "", y = 28 }) => (
   </motion.div>
 );
 
-export const Chapter = ({ index, label, dark = false }) => (
+export const Chapter = ({ label, dark = false }) => (
   <div
     className={`flex items-center gap-3 font-mono text-[11px] tracking-[0.25em] uppercase ${
       dark ? "text-slate-400" : "text-ink-mute"
     }`}
   >
-    <span className={dark ? "text-emerald-400" : "text-emerald-700"}>{index}</span>
-    <span className={`h-px w-10 ${dark ? "bg-slate-700" : "bg-slate-300"}`} />
+    <span className={`h-1.5 w-1.5 rotate-45 ${dark ? "bg-emerald-400" : "bg-emerald-700"}`} />
     <span>{label}</span>
   </div>
 );

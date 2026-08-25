@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 const LINKS = [
-  { label: "The problem", href: "#problem", testid: "nav-link-problem" },
-  { label: "The evidence", href: "#evidence", testid: "nav-link-evidence" },
-  { label: "How it works", href: "#how-it-works", testid: "nav-link-how-it-works" },
-  { label: "The pilot", href: "#pilot", testid: "nav-link-pilot" },
+  { label: "The Gap", href: "#problem", testid: "nav-link-the-gap" },
+  { label: "What lenders say", href: "#lenders", testid: "nav-link-what-lenders-say" },
+  { label: "How It Works", href: "#how-it-works", testid: "nav-link-how-it-works" },
+  { label: "Pilot with us", href: "#pilot", testid: "nav-link-pilot-with-us" },
 ];
 
 export const scrollTo = (href) => {

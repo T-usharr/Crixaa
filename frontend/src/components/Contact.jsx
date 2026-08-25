@@ -18,10 +18,10 @@ export default function Contact() {
     setSubmitting(true);
     try {
       await axios.post(`${API}/leads`, form);
-      toast.success("Received. We'll reply from founders@crixaa.com within two working days.");
+      toast.success("Received. We'll reply from contact@crixaa.com within two working days.");
       setForm(INITIAL);
     } catch (err) {
-      toast.error("Something didn't go through. Please email founders@crixaa.com directly.");
+      toast.error("Something didn't go through. Please email contact@crixaa.com directly.");
     } finally {
       setSubmitting(false);
     }
@@ -60,10 +60,10 @@ export default function Contact() {
               Prefer email?{" "}
               <a
                 data-testid="footer-founder-email"
-                href="mailto:founders@crixaa.com"
+                href="mailto:contact@crixaa.com"
                 className="text-emerald-400 underline decoration-dotted underline-offset-4 transition-colors hover:text-emerald-300"
               >
-                founders@crixaa.com
+                contact@crixaa.com
               </a>
             </p>
           </Reveal>

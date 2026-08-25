@@ -49,13 +49,10 @@ export default function Compliance() {
         </Reveal>
 
         <div className="mt-14 grid gap-px border border-[#1E293B] bg-[#1E293B] lg:grid-cols-3">
-          {PILLARS.map((p, i) => (
-            <Reveal key={p.title} delay={0.1 + i * 0.1} className="bg-[#0C1826]">
+          {PILLARS.map((p) => (
+            <Reveal key={p.title} delay={0.1} className="bg-[#0C1826]">
               <div data-testid={p.testid} className="flex h-full flex-col p-6 sm:p-8">
-                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-400">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-4 font-display text-lg font-semibold tracking-tight text-white">
+                <h3 className="font-display text-lg font-semibold tracking-tight text-white">
                   {p.title}
                 </h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-400">

@@ -13,9 +13,6 @@ export default function Footer() {
           </div>
           <p className="mt-4 text-sm leading-relaxed">
             The underwriting decisioning layer for new-to-credit MSME loans in India.
-            Pre-launch; specimen outputs on this page are illustrative, not real
-            applicants or customers. Every market figure is third-party published
-            data, attributed inline where it appears.
           </p>
         </div>
 
@@ -28,7 +25,7 @@ export default function Footer() {
             Start a conversation
           </button>
           <p className="font-mono text-[11px] tracking-wide text-slate-500">
-            © 2026 Crixaa · founders@crixaa.com
+            © 2026 Crixaa · contact@crixaa.com
           </p>
         </div>
       </div>
