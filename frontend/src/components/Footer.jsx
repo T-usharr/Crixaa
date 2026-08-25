@@ -1,16 +1,12 @@
 import { scrollTo } from "./Nav";
+import Logo from "./Logo";
 
 export default function Footer() {
   return (
     <footer data-testid="site-footer" className="bg-[#060D16] py-12 text-slate-400">
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8">
         <div className="max-w-md">
-          <div className="flex items-center gap-2">
-            <span className="block h-2.5 w-2.5 bg-emerald-500" />
-            <span className="font-display text-lg font-bold tracking-tight text-white">
-              Crixaa
-            </span>
-          </div>
+          <Logo dark />
           <p className="mt-4 text-sm leading-relaxed">
             The underwriting decisioning layer for new-to-credit MSME loans in India.
           </p>

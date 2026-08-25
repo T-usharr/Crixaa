@@ -37,6 +37,7 @@ EMAIL_BASE_URL = "https://integrations.emergentagent.com"
 EMAIL_KEY = os.environ.get("EMERGENT_EMAIL_KEY")
 EMAIL_FROM_NAME = os.environ.get("EMAIL_FROM_NAME", "Crixaa")
 OWNER_EMAIL = os.environ.get("OWNER_EMAIL")
+EMAIL_REPLY_TO = os.environ.get("EMAIL_REPLY_TO")
 
 _SHORTENERS = ("bit.ly", "tinyurl.com", "t.co", "is.gd", "cutt.ly", "goo.gl", "rebrand.ly")
 _CRED_ASK = ("reply with your password", "reply with the code", "send your password", "cvv",
@@ -111,9 +112,11 @@ def _assert_safe_email(subject: str, html: str) -> None:
                 raise ValueError(f"Anchor text {m.group(1)!r} != real link host {real!r} (G3)")
 
 
-async def send_email(*, to: str, subject: str, html: str) -> str | None:
+async def send_email(*, to: str, subject: str, html: str, reply_to: str | None = None) -> str | None:
     _assert_safe_email(subject, html)
     payload = {"to": [to], "subject": subject, "html": html, "from_name": EMAIL_FROM_NAME}
+    if reply_to or EMAIL_REPLY_TO:
+        payload["contact_email"] = reply_to or EMAIL_REPLY_TO
     async with httpx.AsyncClient(timeout=30) as http:
         resp = await http.post(
             f"{EMAIL_BASE_URL}/api/v1/email/send",
@@ -173,6 +176,34 @@ def _lead_email_html(lead: Lead) -> str:
     )
 
 
+def _lead_confirmation_html(lead: Lead) -> str:
+    first_name = escape(lead.name.split()[0] if lead.name.strip() else "there")
+    return (
+        '<table role="presentation" width="100%" style="background:#F8FAFC;padding:24px 0">'
+        '<tr><td align="center">'
+        '<table role="presentation" width="560" style="background:#FFFFFF;border:1px solid #E2E8F0;padding:28px">'
+        '<tr><td>'
+        '<p style="margin:0 0 4px;font-family:monospace;font-size:11px;letter-spacing:2px;'
+        'color:#047857;text-transform:uppercase">Enquiry received</p>'
+        f'<p style="margin:0 0 20px;font-family:Arial,sans-serif;font-size:18px;font-weight:bold;'
+        f'color:#0F172A">Thanks, {first_name} — we have your note.</p>'
+        '<p style="margin:0 0 14px;font-family:Arial,sans-serif;font-size:14px;line-height:1.6;'
+        f'color:#334155">Your enquiry from <strong>{escape(lead.organization)}</strong> is with '
+        'the Crixaa founding team — not a queue, not a ticketing system.</p>'
+        '<p style="margin:0 0 14px;font-family:Arial,sans-serif;font-size:14px;line-height:1.6;'
+        'color:#334155"><strong>What happens next:</strong> a founder will reply from '
+        'contact@crixaa.com within two working days. If a shadow pilot looks like a fit, we will '
+        'propose a 30-minute call first; early conversations are covered under NDA on request.</p>'
+        '<p style="margin:0 0 14px;font-family:Arial,sans-serif;font-size:14px;line-height:1.6;'
+        'color:#334155">And as we say on the page: if we are not ready for your portfolio yet, '
+        'we will tell you plainly.</p>'
+        '<p style="margin:24px 0 0;font-family:Arial,sans-serif;font-size:12px;color:#94A3B8">'
+        f'Sent by {escape(EMAIL_FROM_NAME)} — the underwriting decisioning layer for '
+        'new-to-credit MSME loans in India.</p>'
+        '</td></tr></table></td></tr></table>'
+    )
+
+
 @api_router.get("/")
 async def root():
     return {"message": "Crixaa API"}
@@ -185,12 +216,21 @@ async def create_lead(input: LeadCreate):
     doc['created_at'] = doc['created_at'].isoformat()
     await db.leads.insert_one(doc)
 
-    if EMAIL_KEY and OWNER_EMAIL:
+    if EMAIL_KEY:
+        if OWNER_EMAIL:
+            try:
+                subject = f"New Crixaa pilot enquiry — {lead.organization}"
+                await send_email(to=OWNER_EMAIL, subject=subject, html=_lead_email_html(lead))
+            except Exception as e:
+                logger.error(f"Lead notification email failed: {e}")
         try:
-            subject = f"New Crixaa pilot enquiry — {lead.organization}"
-            await send_email(to=OWNER_EMAIL, subject=subject, html=_lead_email_html(lead))
+            await send_email(
+                to=str(lead.email),
+                subject="We've received your enquiry — Crixaa",
+                html=_lead_confirmation_html(lead),
+            )
         except Exception as e:
-            logger.error(f"Lead notification email failed: {e}")
+            logger.error(f"Lead confirmation email failed: {e}")
 
     return lead
 

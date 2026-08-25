@@ -34,6 +34,8 @@ Build a credible, pre-launch B2B fintech landing page for Crixaa — an underwri
 - Unnumbered chapter labels (diamond marker), dark compliance + final CTA bands; nav: The Gap / What lenders say / How It Works / Pilot with us.
 - Working contact form → MongoDB, Sonner success/error toasts; GET /api/leads for reviewing submissions.
 - Email notification to contact@crixaa.com on every new enquiry (Emergent managed email proxy, httpx async, guardrail-gated template; verified 202 Accepted).
+- Instant branded auto-reply to every enquirer ("We've received your enquiry — Crixaa", what-happens-next copy, Reply-To contact@crixaa.com; verified 202 Accepted via delivered@resend.dev).
+- Brand logomark: "Strata Funnel" (user-chosen from 6 concepts) — three data layers narrowing into an emerald check; used in nav + footer, light/dark variants.
 - Fully responsive (verified 390px + 1920px).
 
 ## Backlog

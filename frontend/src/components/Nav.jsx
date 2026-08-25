@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Logo from "./Logo";
 
 const LINKS = [
   { label: "The Gap", href: "#problem", testid: "nav-link-the-gap" },
@@ -42,10 +43,7 @@ export default function Nav() {
           }}
           className="flex items-center gap-2"
         >
-          <span className="block h-2.5 w-2.5 bg-emerald-700" />
-          <span className="font-display text-lg font-bold tracking-tight text-ink">
-            Crixaa
-          </span>
+          <Logo />
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
